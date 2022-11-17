@@ -6,9 +6,15 @@ export default class RG {
         this.dataEmissao = dataEmissao
     }
     public get getValor(): string {
-        return this.valor
+        return this.valor;
+    }
+    public setValor(valor: string) {
+        this.valor = valor;
     }
     public get getDataEmissao(): Date {
-        return this.dataEmissao
+        return this.dataEmissao;
+    }
+    public setDataEmissao(data: Date) {
+        this.dataEmissao = data;
     }
 }
