@@ -1,4 +1,5 @@
 import Cliente from "../models/cliente";
+import CPF from "../models/cpf";
 import Listagem from "./listagem";
 
 export default class ListagemClientes extends Listagem {
@@ -16,5 +17,16 @@ export default class ListagemClientes extends Listagem {
             console.log(`--------------------------------------`);
         });
         console.log(`\n`);
+    }
+    public listarum(cli_nome: string, cli_cpf: string): void {
+        this.clientes.forEach(cli => {
+            if (cli.getCpf.getValor == cli_cpf) {
+                if (cli.nome.toLocaleLowerCase() == cli_nome.toLocaleLowerCase())
+                console.log(`Nome: ` + cli.nome);
+                console.log(`Nome Social: ` + cli.nomeSocial);
+                console.log(`CPF: ` + cli.getCpf.getValor);
+                console.log(`-----------------------------------`);
+            }
+        });
     }
 }
