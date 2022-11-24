@@ -1,6 +1,6 @@
-import Cliente from "../models/cliente"
-import Entrada from "../utils/entrada"
-import Update from "./update"
+import Cliente from "../../models/cliente"
+import Entrada from "../../utils/entrada"
+import Update from "../update"
 
 export default class UpdateCliente extends Update {
     private clientes: Array<Cliente>
@@ -106,6 +106,46 @@ export default class UpdateCliente extends Update {
 
                         break;
                     case 5:
+                        if (cli.getTelefones.length === 0) {
+                            console.log(`Sem telefones cadastrados...`)
+                            console.log(`Deseja cadastrar um telefone?`)
+                            let op = entrada.receberNumero("Escolha:\n\n1 -- Para Cadastrar --\n\n2 -- Para Não Cadastrar --\n\n")
+                            switch (op) {
+                                case 1:
+                                    let ddd = entrada.receberTexto("Insira o DDD: ")
+                                    let tel = entrada.receberTexto("Insira o numero de telefone que será cadastrado: ")
+                                    cli.addPhone(ddd, tel)
+                                    console.log("------------------------------------------\n\n")
+
+                                    break;
+                                case 2:
+                                    console.log('Obrigado por Utilizar o sistema')
+                                    break;
+                                default:
+                                    console.log("Escolha opção Válida...\n\n")
+                            }
+
+                        } else {
+                            let cont = 0;
+                            cli.getTelefones.forEach(tel => {
+                                console.log(cont, " - (", tel.getDdd, ") ", tel.getNumero)
+                                cont++
+                            });
+                            let op = entrada.receberNumero("Insira o Numero da opção que você deseja ou 9999 para cadastrar um novo: ");
+                            if (op >= 0 && cli.getTelefones.length > op) {
+                                let alter = cli.getTelefones[op];
+                                let ddd = entrada.receberTexto("Insira o novo DDD: ");
+                                let num = entrada.receberTexto("Insira o numero: ");
+                                alter.setDdd(ddd)
+                                alter.setNumero(num)
+                            } else if (op == 9999) {
+                                let ddd = entrada.receberTexto("Insira o DDD: ")
+                                let numero = entrada.receberTexto("Insira o Numero: ")
+                                cli.addPhone(ddd, numero)
+                            } else {
+                                console.log("Invalido...")
+                            }
+                        }
                         break;
                     case 0:
                         break;

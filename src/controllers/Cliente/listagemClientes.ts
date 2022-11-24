@@ -1,6 +1,6 @@
-import Cliente from "../models/cliente";
-import CPF from "../models/cpf";
-import Listagem from "./listagem";
+import Cliente from "../../models/cliente";
+import CPF from "../../models/cpf";
+import Listagem from "../listagem";
 
 export default class ListagemClientes extends Listagem {
     private clientes: Array<Cliente>
@@ -22,7 +22,7 @@ export default class ListagemClientes extends Listagem {
         this.clientes.forEach(cli => {
             if (cli.getCpf.getValor == cli_cpf) {
                 if (cli.nome.toLocaleLowerCase() == cli_nome.toLocaleLowerCase())
-                console.log(`Nome: ` + cli.nome);
+                    console.log(`Nome: ` + cli.nome);
                 console.log(`Nome Social: ` + cli.nomeSocial);
                 console.log(`CPF: ` + cli.getCpf.getValor);
                 console.log(`-----------------------------------`);

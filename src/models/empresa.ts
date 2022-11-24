@@ -3,10 +3,12 @@ import Produto from "./produto"
 import Servico from "./servico"
 
 export default class Empresa{
+    public nomeSubsidiaria: string
     private clientes: Array<Cliente>
     private produtos: Array<Produto>
     private servicos: Array<Servico>
-    constructor(){
+    constructor(nome: string){
+        this.nomeSubsidiaria = nome
         this.clientes = []
         this.produtos = []
         this.servicos = []
