@@ -2,6 +2,13 @@ export default class Servico {
     public nome!: string
     private desc!: string
     private valor!: string
+    private codigo!: Number
+    constructor(nome: string, desc: string, valor: string, codigo: Number){
+        this.nome = nome
+        this.desc = desc
+        this.valor = valor
+        this.codigo = codigo
+    }
 
     public get getnome(): string{
         return this.nome
@@ -12,6 +19,9 @@ export default class Servico {
     public get getvalor(): string{
         return this.valor
     }
+    public get getCodigo(): Number{
+        return this.codigo
+    }
     public setnome(nome: string){
         this.nome = nome
     }
@@ -20,5 +30,8 @@ export default class Servico {
     }
     public setvalor(valor: string){
         this.valor = valor
+    }
+    public setCodigo(cod: Number){
+        this.codigo = cod
     }
 }

@@ -9,6 +9,11 @@ import CadastroProduto from "./controllers/Produtos/createProduto";
 import UpdateProduto from "./controllers/Produtos/updateProduto";
 import getProdutos from "./controllers/Produtos/getProdutos";
 import DestroyProdutos from "./controllers/Produtos/deleteProdutos";
+import CadastroService from "./controllers/Serviços/createService";
+import UpdateService from "./controllers/Serviços/updateService";
+import getServicos from "./controllers/Serviços/getService";
+import DestroyServico from "./controllers/Serviços/deleteProdutos";
+import Produto from "./models/produto";
 
 console.log(`Bem-vindo ao cadastro de clientes do Grupo World Beauty`);
 let empresas = new subsidiaria();
@@ -165,6 +170,44 @@ while (execucao) {
                 console.log("3 - Ver Serviço Cadastrados");
                 console.log("4 - Deletar um Serviço");
                 console.log("0 - Voltar");
+                op = entrada.receberNumero("");
+                switch (op) {
+                  case 1:
+                    let cadNewService = new CadastroService(
+                      selecionada.getServicos
+                    );
+                    cadNewService.cadastrar();
+                    break;
+                  case 2:
+                    let updNewService = new UpdateService(
+                      selecionada.getServicos
+                    );
+                    let codigo = entrada.receberNumero(
+                      "Insira o codigo do pedido: "
+                    );
+                    updNewService.update(codigo.toString());
+                    break;
+                  case 3:
+                    let newListServico = new getServicos(
+                      selecionada.getServicos
+                    );
+                    newListServico.listar();
+                    break;
+                  case 4:
+                    let newDestServico = new DestroyServico(
+                      selecionada.getServicos,
+                      selecionada
+                    );
+                    let identidade = entrada.receberNumero(
+                      "Insira o codigo do pedido: "
+                    );
+                    newDestServico.destroy(identidade.toString());
+                    break;
+                  case 0:
+                    break;
+                  default:
+                    console.log("Invalido...");
+                }
                 break;
               case 0:
                 break;
@@ -173,11 +216,115 @@ while (execucao) {
             }
             break;
           case 3:
-          //op3
+            if (selecionada.getClientes.length > 0) {
+              console.log("Insira a Indentificação do Cliente: ");
+              let id = entrada.receberTexto("CPF: ");
+              var cli = selecionada.getClientes;
+              cli.forEach((cli) => {
+                if (cli.getCpf.getValor == id) {
+                  var selecaocli = cli;
+                  var incompra = true;
+                  while (incompra) {
+                    console.log("1 - Para Comprar Produtos.");
+                    console.log("2 - Para Comprar Serviços.");
+                    console.log("3 - Cancelamento de Compra de Produto.");
+                    console.log("4 - Cancelamento de Compra de Serviço.");
+                    console.log("0 - Para Voltar");
+                    var op = entrada.receberNumero("");
+                    switch (op) {
+                      case 1:
+                        if (selecionada.getProdutos.length > 0) {
+                          console.log(
+                            "Compra de Produtos - Digite o Numero do Selecionado: "
+                          );
+                          var cont = 0;
+                          let produtos = selecionada.getProdutos;
+                          produtos.forEach((prod) => {
+                            console.log(
+                              cont,
+                              " - ",
+                              prod.getnome,
+                              " - R$",
+                              prod.getvalor
+                            );
+                            cont++;
+                          });
+                          let selectedprod = entrada.receberNumero("");
+                          selecaocli.addProduto(produtos[selectedprod]);
+                        } else {
+                          console.log("Cadastre um Produto Primeiro!");
+                        }
+                        break;
+                      case 2:
+                        if (selecionada.getServicos.length > 0) {
+                          console.log(
+                            "Compra de Serviços - Digite o Numero do Selecionado: "
+                          );
+                          var cont = 0;
+                          let servicos = selecionada.getServicos;
+                          servicos.forEach((serv) => {
+                            console.log(
+                              cont,
+                              " - ",
+                              serv.getnome,
+                              " - R$",
+                              serv.getvalor
+                            );
+                            cont++;
+                          });
+                          let selectedserv = entrada.receberNumero("");
+                          selecaocli.addServiço(servicos[selectedserv]);
+                        } else {
+                          console.log("Cadastre um serviço primeiro!");
+                        }
+                        break;
+                      case 3:
+                        if (selecionada.getProdutos.length > 0) {
+                          console.log(
+                            "Selecione o Produto que deseja cancelar com o código dele: "
+                          );
+                          var a = selecaocli.getProdutosConsumidos;
+                          a.forEach((item) => {
+                            console.log(item.getcodigo, " - ", item.getnome);
+                          });
+                          var cod = entrada.receberNumero("");
+                          selecaocli.removeProduto(cod);
+                        } else {
+                          console.log("Cadastre um Produto Primeiro");
+                        }
+                        break;
+                      case 4:
+                        if (selecionada.getServicos.length > 0) {
+                          console.log(
+                            "Selecione o Serviço que deseja cancelar com codigo dele: "
+                          );
+                          var b = selecaocli.getServicosConsumidos;
+                          b.forEach((item) => {
+                            console.log(item.getCodigo, " - ", item.getnome);
+                          });
+                          var cod = entrada.receberNumero("");
+                          selecaocli.removeServiço(cod);
+                        }
+                        break;
+                      case 0:
+                        incompra = false;
+                        break;
+                      default:
+                        console.log("Insira opção Valida...");
+                    }
+                  }
+                } else {
+                  console.log("Cliente não encontrado...")
+                }
+              });
+            } else {
+              console.log("Sem Clientes Cadastrados, por favor cadastre um!");
+            }
+
           case 0:
-            execucao = false
-            insub = false
-            break
+            execucao = false;
+            insub = false;
+            break;
           default:
             console.log("Tenta novamente, opção Invalida..");
         }

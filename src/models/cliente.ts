@@ -69,4 +69,24 @@ export default class Cliente {
     public get getServicosConsumidos(): Array<Servico> {
         return this.servicosConsumidos
     }
+    public addServiço(serv: Servico){
+        this.servicosConsumidos.push(serv)
+    }
+    public addProduto(prod: Produto){
+        this.produtosConsumidos.push(prod)
+    }
+    public removeServiço(serv: number){
+        const nservices = this.servicosConsumidos.filter(s => {
+            s.getCodigo != serv
+        })
+
+        this.servicosConsumidos = nservices
+    }
+    public removeProduto(prod: number){
+        const nproducts = this.produtosConsumidos.filter(p => {
+            p.getcodigo != prod
+        })
+
+        this.produtosConsumidos = nproducts
+    }
 }
