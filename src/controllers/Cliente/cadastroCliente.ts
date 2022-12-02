@@ -27,4 +27,10 @@ export default class CadastroCliente extends Cadastro {
         this.clientes.push(cliente)
         console.log(`\nCadastro concluído :)\n`);
     }
+    public cads(dia: number, mes: number, ano:number, valor: string, nome: string, nomeSocial: string): void{
+        var dataEmissao = new Date(ano, mes, dia)
+        var cpf = new CPF(valor, dataEmissao);
+        var cliente = new Cliente(nome, nomeSocial, cpf);
+        this.clientes.push(cliente)
+    }
 }

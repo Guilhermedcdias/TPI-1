@@ -8,7 +8,7 @@ export default class getServicos extends Listagem {
     this.servico = serv;
   }
   public listar(): void {
-    console.log(`\nLista de todos os clientes: `);
+    console.log(`\nLista de todos os Serviços: `);
     this.servico.forEach((ser) => {
       console.log("Nome do Serviço: " + ser.getnome);
       console.log("Descrição do Serviço: " + ser.getdesc);

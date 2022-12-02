@@ -24,4 +24,8 @@ export default class CadastroProduto extends Cadastro {
         this.produtos.push(newProduct)
         console.log("\nCadastro Concluido :)\n")
     }
+    public cads(nome: string, marca: string, valor: string, cod: number):void{
+        let newP = new Produto(nome, marca, valor, cod)
+        this.produtos.push(newP)
+    }
 }

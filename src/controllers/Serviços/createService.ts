@@ -25,4 +25,8 @@ export default class CadastroService extends Cadastro {
         this.servico.push(newS)
         console.log("\nCadastro Concluido :)\n")
     }
+    public cads(nome: string, desc: string, valor: string, cod: number){
+        let NovoS = new Servico(nome, desc, valor, cod)
+        this.servico.push(NovoS)
+    }
 }

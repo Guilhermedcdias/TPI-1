@@ -14,12 +14,15 @@ import UpdateService from "./controllers/Serviços/updateService";
 import getServicos from "./controllers/Serviços/getService";
 import DestroyServico from "./controllers/Serviços/deleteProdutos";
 import Produto from "./models/produto";
+import Precad from "./precad";
 
 console.log(`Bem-vindo ao cadastro de clientes do Grupo World Beauty`);
 let empresas = new subsidiaria();
 let execucao = true;
 let entrada = new Entrada();
 let insub = true;
+let precad = new Precad()
+precad.cadastre(empresas)
 
 while (execucao) {
   if (empresas.getEmpresas.length === 0) {
@@ -34,7 +37,7 @@ while (execucao) {
         empresas.addSubsid(empresa);
         break;
       case 2:
-        !execucao;
+        execucao = false;
         console.log("Até Mais");
         break;
       default:
@@ -47,6 +50,7 @@ while (execucao) {
       console.log(contador, " - ", sub.nomeSubsidiaria);
       contador++;
     });
+    insub = false;
     console.log("Ou digite 9999 para cadastrar uma nova Subsidiaria!");
     let escolha = entrada.receberNumero("");
     if (escolha == 9999) {
@@ -55,7 +59,7 @@ while (execucao) {
       empresas.addSubsid(empresa);
     } else if (escolha < empresas.getEmpresas.length && escolha >= 0) {
       insub = true;
-      while (insub == true) {
+      while (insub) {
         let selecionada = empresas.getEmpresas[escolha];
         console.log(`Opções:`);
         console.log(`1 - Menu de clientes`);
@@ -217,7 +221,7 @@ while (execucao) {
             break;
           case 3:
             if (selecionada.getClientes.length > 0) {
-              console.log("Insira a Indentificação do Cliente: ");
+              console.log("Insira a Identificação do Cliente: ");
               let id = entrada.receberTexto("CPF: ");
               var cli = selecionada.getClientes;
               cli.forEach((cli) => {
@@ -313,8 +317,6 @@ while (execucao) {
                         console.log("Insira opção Valida...");
                     }
                   }
-                } else {
-                  console.log("Cliente não encontrado...")
                 }
               });
             } else {
@@ -322,7 +324,6 @@ while (execucao) {
             }
 
           case 0:
-            execucao = false;
             insub = false;
             break;
           default:

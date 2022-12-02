@@ -8,7 +8,7 @@ export default class getProdutos extends Listagem {
     this.produto = produtos;
   }
   public listar(): void {
-    console.log(`\nLista de todos os clientes: `);
+    console.log(`\nLista de todos os Produtos: `);
     this.produto.forEach((pro) => {
       console.log("Nome do Produto: " + pro.getnome);
       console.log("Marca do Produto: " + pro.getmarca);
