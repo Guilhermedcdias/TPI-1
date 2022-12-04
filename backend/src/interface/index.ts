@@ -15,12 +15,10 @@ export interface ICliente {
 export interface ICpf {
     cpf_id: Number;
     cpf_valor: String;
-    cpf_dataEmissao: String;
 }
 export interface IRg{ 
     rg_id: Number;
     rg_valor: String;
-    rg_dataEmissao: String;
 }
 export interface ITelefone{
     telefone_id: number;
@@ -36,6 +34,7 @@ export interface IServicos{
     servico_id: number;
     servico_nome: string;
     servico_valor: string;
+    servico_desc: string;
 }
 export interface IEmpresa{
     empresa_id: number;

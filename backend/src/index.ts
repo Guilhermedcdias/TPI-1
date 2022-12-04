@@ -31,10 +31,10 @@ try {
         .insert()
         .into(servicos)
         .values([
-            {servico_nome: "Cortar Cabelo", servico_valor: 50.75},
-            {servico_nome: "Manicure", servico_valor: 50.75},
-            {servico_nome: "Pedicure", servico_valor: 50.75},
-            {servico_nome: "Cabelo na régua", servico_valor: 50.75}
+            {servico_nome: "Cortar Cabelo", servico_valor: 50.75, servico_desc: "Corte do Cabelo"},
+            {servico_nome: "Manicure", servico_valor: 50.75, servico_desc: "Corte do unha"},
+            {servico_nome: "Pedicure", servico_valor: 50.75, servico_desc: "Corte do unha do pé"},
+            {servico_nome: "Cabelo na régua", servico_valor: 50.75, servico_desc: "Corte do cabelo com regua"}
         ])
         .execute() 
     })

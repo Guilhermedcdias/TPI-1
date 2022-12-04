@@ -27,6 +27,7 @@ interface IServico {
     servico_id: number,
     servico_nome: string,
     servico_valor: number
+    servico_desc: string
 }
 interface IProduto {
     produto_id: number,

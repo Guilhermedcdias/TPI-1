@@ -8,7 +8,7 @@ const servicosRepository = AppDataSource.getRepository(servicos)
 class Servico {
     async create(req: Request, res: Response, next: NextFunction) {
         try {
-            const { servico_id, servico_nome, servico_valor }: IServicos = req.body
+            const { servico_id, servico_nome, servico_valor, servico_desc }: IServicos = req.body
             await servicosRepository
                 .createQueryBuilder()
                 .insert()
@@ -114,7 +114,8 @@ class Servico {
             await servicosRepository.
             createQueryBuilder().update().set({
                 'servico_nome':body.servico_nome,
-                'servico_valor':body.servico_valor
+                'servico_valor':body.servico_valor,
+                'servico_desc':body.servico_desc
             }).where ('servico_id = :servico_id', {servico_id:id}).execute()
         } catch(error){
             res.json (error)
