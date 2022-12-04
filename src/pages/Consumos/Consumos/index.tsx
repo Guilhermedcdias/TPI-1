@@ -2,7 +2,7 @@
 import { Eye } from 'phosphor-react';
 import { Component } from 'react';
 import { Button, Table } from 'react-bootstrap';
-import  NavBar_  from '../../../component/NavBar'
+import  NavBar_  from '../../../component'
 
 export class Consumos extends Component {
     render(){

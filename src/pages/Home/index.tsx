@@ -1,6 +1,5 @@
-/* eslint-disable react/jsx-pascal-case */
 import { Component } from 'react';
-import Navbar_ from '../../component/NavBar';
+import Navbar_ from '../../component';
 import './styles.css'
 
 export class Home extends Component {
@@ -13,8 +12,7 @@ export class Home extends Component {
            </header>
            <main>
                <div className="text">
-                   <h1>Bem vindo a aplicação do Salão WB</h1>
-                    <h2>Nessa aplicação você podera fazer o controle de Clientes, Produtos, Serviços e o consumo dos clientes</h2>
+                   <h1>Bem vindo ao site do Salão WB</h1>
                </div>
            </main>
        </section>

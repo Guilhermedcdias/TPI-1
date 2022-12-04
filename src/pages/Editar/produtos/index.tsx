@@ -1,7 +1,6 @@
-/* eslint-disable react/jsx-pascal-case */
 import { Component } from 'react';
 import { Button } from 'react-bootstrap';
-import NavBar_ from '../../../component/NavBar'
+import NavBar_ from '../../../component'
 
 export class EditarProduto extends Component {
     render(){
@@ -12,23 +11,33 @@ export class EditarProduto extends Component {
                 <NavBar_/>
             </header>
             <main>
-                <h1>Editar Produto</h1>
+                <div className="topo">   
+            <div className="row box">
+            <h1>Editar Produto: Shampoo seda</h1>
                 <Button  variant="outline-dark" href='/Produtos'>Voltar</Button>
-                <div className="forms">
-                    <form>
-                        <div className="field">
+                <div className="row">
+                    <form className="col s12">
+                        <div className="input-field col s6">
                             <label htmlFor="Produto">Produto:</label>
-                            <input type="text" defaultValue="Shampoo ant-calvice"/>
+                            <input id="Produto" type="text" className="validate" />
                         </div>
-                        <div className="field">
+                        <br></br>
+                        <div className="input-field col s6">
                             <label htmlFor="Preco">Preço:</label>
-                            <input type="text" defaultValue="15"/>
+                            <input id="Preco" type="text" className="validate" />
                         </div>
-                        <Button className="submit" variant="outline-dark" type='submit'>Editar</Button>{' '}
+                        <br></br>
+                        <div className="row">
+                            <div className="col s12">
+                                <button className="btn waves-effect waves-light botao" type='submit'>Editar</button>
+                            </div>
+                        </div>
                     </form>
                 </div>
+            </div>
+        </div>
             </main>
         </section>
     )
 }
-};
+}

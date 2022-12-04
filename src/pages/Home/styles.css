@@ -9,7 +9,7 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #fdb0f3;   
+    background-color: #B0E0E6;   
 }
 
 .text{
@@ -20,10 +20,6 @@ main{
     text-align: center;
 }
 
-.text h2{
-    width: 80%;
-}
-
 .wrapper{
     margin-top: 35px;
     display: flex;
@@ -31,7 +27,6 @@ main{
     gap: 50px;
 }
 
-.listagem, 
 .cadastrar{
     display: flex;
     flex-direction: column;

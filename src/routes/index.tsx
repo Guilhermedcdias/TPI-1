@@ -4,20 +4,16 @@ import {
     Routes
 } from 'react-router-dom';
 import { Home } from '../pages/Home';
-import { Clientes } from '../pages/Listagem/clientes';
-import { Produtos } from '../pages/Listagem/produtos';
-import { Servicos } from '../pages/Listagem/servicos';
+import { Clientes } from '../pages/Cliente';
+import { Produtos } from '../pages/Produto';
+import { Servicos } from '../pages/Servico';
 import { Consumos } from '../pages/Consumos/Consumos';
-import { CadastrarClientes } from '../pages/Cadastro/clientes';
-import { CadastrarProdutos } from '../pages/Cadastro/produtos';
-import { CadastrarServico } from '../pages/Cadastro/servicos';
-import { VisualizarCliente } from '../pages/Visualizar/clientes';
-import { VisualizarProduto } from '../pages/Visualizar/produtos';
-import { VisualizarServico } from '../pages/Visualizar/servicos';
+import { FormularioCadastroClientes } from '../pages/Cadastro/cliente';
+import { FormularioCadastroProdutos } from '../pages/Cadastro/produto';
+import { FormularioCadastroServicos } from '../pages/Cadastro/servico';
 import { EditarCliente } from '../pages/Editar/clientes';
 import { EditarProduto } from '../pages/Editar/produtos';
 import { EditarServico } from '../pages/Editar/servicos';
-import { Component } from 'react';
 
 export class  AppRoutes extends Component {
     render(){
@@ -30,12 +26,9 @@ export class  AppRoutes extends Component {
                 <Route path='/produtos' element={<Produtos/>}/>
                 <Route path='/servicos' element={<Servicos/>}/>
                 <Route path='/consumos' element={<Consumos/>}/>
-                <Route path='/cadastrar_cliente' element={<CadastrarClientes/>}/>
-                <Route path='/cadastrar_produto' element={<CadastrarProdutos/>}/>
-                <Route path='/cadastrar_servico' element={<CadastrarServico/>}/>
-                <Route path='/clientes/1' element={<VisualizarCliente/>}/>
-                <Route path='/produtos/1' element={<VisualizarProduto/>}/>
-                <Route path='/servicos/1' element={<VisualizarServico/>}/>
+                <Route path='/cadastrar_cliente' element={<FormularioCadastroClientes/>}/>
+                <Route path='/cadastrar_produto' element={<FormularioCadastroProdutos/>}/>
+                <Route path='/cadastrar_servico' element={<FormularioCadastroServicos/>}/>
                 <Route path='/editar_cliente/1' element={<EditarCliente/>}/>
                 <Route path='/editar_produto/1' element={<EditarProduto/>}/>
                 <Route path='/editar_servico/1' element={<EditarServico/>}/>

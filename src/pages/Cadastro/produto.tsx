@@ -1,8 +1,9 @@
+import { Component } from 'react';
 import { Button } from 'react-bootstrap';
-import NavBar_ from '../../../component'
+import NavBar_ from '../../component'
 
-export class EditarServico extends Component {
-    render(){
+export class FormularioCadastroProdutos extends Component {
+    render() {
 
         return (
             <section>
@@ -10,20 +11,14 @@ export class EditarServico extends Component {
                 <NavBar_/>
             </header>
             <main>
-                <div className="topo">   
+            <div className="topo">   
             <div className="row box">
-            <h1>Editar Serviço: Massagem</h1>
-                <Button  variant="outline-dark" href='/Servicos'>Voltar</Button>
+                <h1>Cadastrar Produto</h1>
                 <div className="row">
                     <form className="col s12">
                         <div className="input-field col s6">
-                            <label htmlFor="Servico">Serviço:</label>
-                            <input id="Servico" type="text" className="validate" />
-                        </div>
-                        <br></br>
-                        <div className="input-field col s6">
-                            <label htmlFor="Descricao">Descrição do Serviço:</label>
-                            <input id="Descricao" type="text" className="validate" />
+                            <label htmlFor="Produto">Produto:</label>
+                            <input id="Produto" type="text" className="validate" />
                         </div>
                         <br></br>
                         <div className="input-field col s6">
@@ -42,6 +37,6 @@ export class EditarServico extends Component {
         </div>
             </main>
         </section>
-    )
-}
+    );
+    }      
 }
