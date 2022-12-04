@@ -15,7 +15,6 @@ class RGs {
                 .into(RG)
                 .values({
                     rg_valor: rg_valor,
-                    rg_dataEmissao: rg_dataEmissao,
                     cliente: req.body.cliente_id
                 })
                 .execute()
@@ -47,7 +46,6 @@ class RGs {
                 .createQueryBuilder()
                 .update()
                 .set({
-                    "rg_dataEmissao": body.rg_dataEmissao,
                     "rg_valor": body.rg_valor
                 })
                 .where('rg_id = :rg_id', {
@@ -71,7 +69,6 @@ class RGs {
                 .into(RG)
                 .values({
                     rg_valor: rg_valor,
-                    rg_dataEmissao: rg_dataEmissao,
                     cliente: req.body.cliente
                 })
                 .execute()

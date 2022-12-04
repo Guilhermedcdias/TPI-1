@@ -15,7 +15,6 @@ class CPFs {
                 .into(CPF)
                 .values({
                     cpf_valor: cpf_valor,
-                    cpf_dataEmissao: cpf_dataEmissao,
                     cliente: req.body.cliente_id
                 })
                 .execute()
@@ -32,7 +31,6 @@ class CPFs {
                 .createQueryBuilder()
                 .update()
                 .set({
-                    "cpf_dataEmissao": body.cpf_dataEmissao,
                     "cpf_valor": body.cpf_valor
                 })
                 .where('cpf_id = :cpf_id', {

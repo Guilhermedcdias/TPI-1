@@ -12,11 +12,6 @@ export class RG {
     })
     rg_valor!: String
 
-    @Column({
-        type:"varchar"
-    })
-    rg_dataEmissao!: String
-
     @ManyToOne(() => cliente, (cliente) => cliente.rg)
     @JoinColumn({
         name:"cliente"

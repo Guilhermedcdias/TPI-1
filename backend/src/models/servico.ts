@@ -11,6 +11,10 @@ export class servicos {
     })
     servico_nome!: String
     @Column({
+        type: "varchar"
+    })
+    servico_desc!: String
+    @Column({
         type: "float"
     })
     servico_valor!: Number

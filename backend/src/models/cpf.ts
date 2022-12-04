@@ -12,11 +12,6 @@ export class CPF {
     })
     cpf_valor!: String
 
-    @Column({
-        type:"varchar"
-    })
-    cpf_dataEmissao!: String
-
     @OneToOne(() => cliente, (cliente) => cliente.cpf)
     @JoinColumn({
         name:"cliente"

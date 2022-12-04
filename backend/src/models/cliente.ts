@@ -24,6 +24,10 @@ export class cliente {
         type: "varchar"
     })
     cliente_nomeSocial!: String
+    @Column({
+        type: "varchar"
+    })
+    email!: String
     @CreateDateColumn({
         type: "datetime"
     })

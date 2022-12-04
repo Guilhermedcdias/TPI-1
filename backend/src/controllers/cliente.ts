@@ -29,7 +29,9 @@ class Cliente {
                 .set({
                     "cliente_nome": req.body.cliente_nome,
                     "cliente_nomeSocial": req.body.cliente_nomeSocial,
-                    "cliente_genero": req.body.cliente_genero
+                    "cliente_genero": req.body.cliente_genero,
+                    "email": req.body.email
+
                 })
                 .where("cliente_id = :cliente_id", {
                     cliente_id: id
