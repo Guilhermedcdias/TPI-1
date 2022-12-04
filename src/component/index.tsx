@@ -1,7 +1,7 @@
 import { Container, Nav, Navbar, NavDropdown} from 'react-bootstrap';
 
 
-function Navbar_ () {
+function Navbar_() {
     return (
             <>
             <Navbar  expand = "lg">

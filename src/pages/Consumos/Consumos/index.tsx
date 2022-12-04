@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-pascal-case */
 import { Eye } from 'phosphor-react';
 import { Button, Table } from 'react-bootstrap';
 import  NavBar_  from '../../../component'

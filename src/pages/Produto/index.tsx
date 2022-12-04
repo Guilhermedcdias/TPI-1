@@ -3,7 +3,7 @@ import { Button, Table } from 'react-bootstrap';
 import NavBar_ from '../../component'
 
 function Produtos () {
-     return (
+    return (
             <section>
             <header>
                 <NavBar_/>
@@ -17,6 +17,7 @@ function Produtos () {
                             <th>Id:</th>
                             <th>Produto:</th>
                             <th>Preço:</th>
+                            <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -24,6 +25,16 @@ function Produtos () {
                                 <td>1</td>
                                 <td>Shampoo seda</td>
                                 <td>R$15</td>
+                                <td>
+                                    <div className="icons">
+                                        <a href="##"><PencilSimple size={35} color="#198754"/></a>
+                                        <a href="##"><Eraser size={35} color="#DC3545"/></a>           
+                                    </div>
+                                    <div className="Column">
+                                        <Button variant="outline-success" href='##'>Editar</Button>{' '}
+                                        <Button variant="outline-danger">Remover</Button>{' '}
+                                    </div>
+                                </td>    
                             </tr>
                         </tbody>
                     </Table>

@@ -2,7 +2,7 @@ import Navbar_ from '../../component';
 import './styles.css'
 
 function Home () {
-    return (
+   return (
             <section>
            <header>
                <Navbar_/>

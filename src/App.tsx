@@ -1,12 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AppRoutes from './routes';
 
-function App() {
+function App () {
   return (
-    <div className="App">
+      <div className="App">
       <AppRoutes/>
     </div>
   );
 }
-
 export default App;

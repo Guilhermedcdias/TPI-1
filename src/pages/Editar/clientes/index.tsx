@@ -1,17 +1,17 @@
 import { Button } from 'react-bootstrap';
-import NavBar_ from '../../component'
-import './styles.css'
+import NavBar_ from '../../../component'
 
-function FormularioCadastroClientes () {
+function EditarCliente () {
     return (
-        <section>
+            <section>
             <header>
                 <NavBar_/>
             </header>
             <main>
-            <div className="topo">   
+               <div className="topo">   
             <div className="row box">
-                <h1>Cadastrar Cliente</h1>
+            <h1>Editar Cliente:"Andressa"</h1>
+                <Button  variant="outline-dark" href='/clientes'>Voltar</Button>
                 <div className="row">
                     <form className="col s12">
                         <div className="input-field col s6">
@@ -44,7 +44,7 @@ function FormularioCadastroClientes () {
                         </div>
                         <br></br>
                         <div className="input-field col s6">
-                            <label htmlFor="rg">RG:</label>
+                            <label htmlFor="rg">CPF:</label>
                             <input id="RG" type="text" className="validate" />
                         </div>
                         <br></br>
@@ -60,7 +60,7 @@ function FormularioCadastroClientes () {
                         <br></br>
                         <div className="row">
                             <div className="col s12">
-                                <button className="btn waves-effect waves-light botao" type='submit'>Enviar</button>
+                                <button className="btn waves-effect waves-light botao" type='submit'>Editar</button>
                             </div>
                         </div>
                     </form>
@@ -70,5 +70,6 @@ function FormularioCadastroClientes () {
             </main>
         </section>
     );
-    }
-export default FormularioCadastroClientes;
+}
+export default EditarCliente;
+

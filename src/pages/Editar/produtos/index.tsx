@@ -1,16 +1,17 @@
 import { Button } from 'react-bootstrap';
-import NavBar_ from '../../component'
+import NavBar_ from '../../../component'
 
-function FormularioCadastroProdutos () {
+function EditarProduto () {
     return (
             <section>
             <header>
                 <NavBar_/>
             </header>
             <main>
-            <div className="topo">   
+                <div className="topo">   
             <div className="row box">
-                <h1>Cadastrar Produto</h1>
+            <h1>Editar Produto: Shampoo seda</h1>
+                <Button  variant="outline-dark" href='/Produtos'>Voltar</Button>
                 <div className="row">
                     <form className="col s12">
                         <div className="input-field col s6">
@@ -25,7 +26,7 @@ function FormularioCadastroProdutos () {
                         <br></br>
                         <div className="row">
                             <div className="col s12">
-                                <button className="btn waves-effect waves-light botao" type='submit'>Enviar</button>
+                                <button className="btn waves-effect waves-light botao" type='submit'>Editar</button>
                             </div>
                         </div>
                     </form>
@@ -34,6 +35,6 @@ function FormularioCadastroProdutos () {
         </div>
             </main>
         </section>
-    );
-    }      
-export default FormularioCadastroProdutos;
+    )
+}
+export default EditarProduto;
