@@ -1,0 +1,126 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+
+.container{
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    grid-gap: 20px;
+    grid-column-gap: 100px;
+    margin: auto;
+    grid-template-rows: 10vh 80vh 10vh;
+}
+
+.botao{
+    width: 147.733px;
+    margin-left: 10px;
+    background-color: #4682B4;
+}
+
+.botao_cancelar{
+    width: 147.733px;
+    margin-left: 10px;
+    background-color: #4682B4;
+}
+
+.botao_cancelar:hover{
+    background-color: #4682B4;
+}
+
+.botao:hover{
+    background-color: #77b4e6);
+}
+
+.botoes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.botoes_user{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center !important ;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.topo{
+    margin-top: 70px;
+}
+
+input:hover{
+    background-color: #ADD8E6;
+}
+
+.subtitulo{
+    text-align: center !important;
+    justify-content: center !important;
+    margin-left: 50px;
+}
+
+.h6{
+    text-align: center;
+}
+
+main{
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+aside{
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.box{
+    margin: auto;
+    background-color: #FFFFFE;
+    box-shadow: 0px 1px 42px rgba(151, 116, 208, 0.25);
+    border-radius: 10px;
+    padding: 10px 20px 20px 20px;
+    max-width: 960px;
+    display: flex;
+	flex-wrap: wrap;
+    text-align: center;
+}
+
+.cliente{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.teste{
+    margin-top: 30px;
+}
+
+.margin_left{
+    margin-left: 180px !important;
+}
+
+.edit{
+    color: white;
+}
+
+.input-field .prefix.active {
+    color: #ADD8E6;
+  }
+
+  /* label color */
+  .input-field label {
+    color: black;
+  } 
+
+  @media(max-width: 768px) {
+    body {
+        margin: 0 15px;
+    }
+
+    aside {
+        width: 100%;
+    }
+  }
